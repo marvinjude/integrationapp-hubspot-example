@@ -24,7 +24,7 @@ export function useHubspotRecords(
     async () => {
       const actionResponse = (await integrationApp
         .connection("hubspot")
-        .action("list-contacts")
+        .action(process.env.NEXT_PUBLIC_HUBSPOT_FETCH_ACTION_KEY as string)
         .run()) as {
         output: {
           records: {

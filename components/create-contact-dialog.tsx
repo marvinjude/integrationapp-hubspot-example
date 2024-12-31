@@ -94,7 +94,7 @@ export function CreateContactDialog({
     try {
       await integrationApp
         .connection("hubspot")
-        .action("create-contact")
+        .action(process.env.NEXT_PUBLIC_HUBSPOT_CREATE_ACTION_KEY as string)
         .run({
           ...otherFields,
           pronouns: pronouns.join("/"),
