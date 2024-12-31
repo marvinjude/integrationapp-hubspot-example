@@ -14,8 +14,10 @@ Integration.app lets to integrate data into your app from different data sources
 
 Once your account is created you will need to setup add the Hubpot app and create two actions:
 
-- list-data-records (to list all the contacts)
-- create-contact (to create a new contact)
+- **list-contacts** (to list all the contacts)
+- **create-contact** (to create a new contact)
+
+If you actions have different names, you'll need to update your `.env.local` file with the correct action names.
 
 _You can also import this template into your workspace: [Import template](https://integration.app/templates/60f3b3b3b3b3b30001f3b3b3) — This doesn't actually work yet, it's only a proposal._
 
@@ -52,3 +54,7 @@ cp .env.local.example .env.local
 - Ensure the authenticated workspace ID is passed back to the URI as current Hubspot URI is missing the workspace ID.
 - Fix the UI issue that prevents creating an output schema from being created, as the interface is currently unstable.
 - Implement a feature to clone actions, which would be beneficial for testing and experimenting with different examples.
+
+### Todo
+
+- Page integration.app pagination in the UI
