@@ -31,13 +31,10 @@ _You can also import this template into your workspace: [Import template](https:
    npm install
    ```
 
-3. Enter your Integration.app and Clerk keys in `.env.local`
+3. Enter your Integration.app and Clerk keys in `.env.local`. Copy the `.env.local.example` file and rename it to `.env.local` to get started:
 
-```env
- NEXT_PUBLIC_INTEGRATION_APP_WORKSPACE_KEY=your-workspace-key
- INTEGRATION_APP_SECRET_KEY=your-secret-key
- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-public-key
- CLERK_SECRET=your-clerk-secret-key
+```sh
+cp .env.local.example .env.local
 ```
 
 5. Run the app
