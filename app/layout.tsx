@@ -1,4 +1,4 @@
-import { IntegrationDotAppProvider } from "@/components/IntegrationAppProvider";
+import { IntegrationDotAppProvider } from "@/components/Integration-app-provider";
 import type { Metadata } from "next";
 import { ClerkProvider, SignedOut } from "@clerk/nextjs";
 import { Instrument_Sans } from "next/font/google";

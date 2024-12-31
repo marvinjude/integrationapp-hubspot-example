@@ -42,16 +42,21 @@ export function useHubspotRecords(
         };
       };
 
-      return actionResponse.output.records.map((record) => ({
-        id: record.id,
-        fullName: record.name,
-        email: record.fields.email,
-        phone: record.fields.phone,
-        createdAt: record.createdTime,
-        pronouns: record.fields.salutation,
-        company_name: record.fields.company,
-        uri: record.uri,
-      })) as HubspotRecord[];
+      return actionResponse.output.records
+        .map((record) => ({
+          id: record.id,
+          fullName: record.name,
+          email: record.fields.email,
+          phone: record.fields.phone,
+          createdAt: record.createdTime,
+          pronouns: record.fields.salutation,
+          company_name: record.fields.company,
+          uri: record.uri,
+        }))
+        .sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
     },
     {
       revalidateOnFocus: false,

@@ -20,7 +20,7 @@ import { CreateContactDialog } from "@/components/create-contact-dialog";
  * - We neeed a discord community to support customers
  * - We need to fix our documentation
  * - We need to pass back the id of the authenticated workspace to URI
- * - Unable to crate output schema for the create-contact action the UI keeps jumping. I had to access the response data directly from the response object
+ * - Unable to create output schema for the create-contact action as UI keeps jumping. We have to access the response
  */
 
 function Page() {
@@ -64,25 +64,19 @@ function Page() {
           </div>
         ) : (
           <div className="space-y-2 w-full overflow-y-auto pb-20 flex-1 hide-scroolbar">
-            {records
-              ?.sort(
-                (a, b) =>
-                  new Date(b.createdAt).getTime() -
-                  new Date(a.createdAt).getTime()
-              )
-              .map((record) => (
-                <UserCard
-                  createdAt={record.createdAt}
-                  uri={record.uri}
-                  key={record.id}
-                  fullName={record.fullName}
-                  companyName={record.company_name}
-                  email={record.email}
-                  phone={record.phone}
-                  pronouns={record.pronouns}
-                  avatarUrl=""
-                />
-              ))}
+            {records?.map((record) => (
+              <UserCard
+                createdAt={record.createdAt}
+                uri={record.uri}
+                key={record.id}
+                fullName={record.fullName}
+                companyName={record.company_name}
+                email={record.email}
+                phone={record.phone}
+                pronouns={record.pronouns}
+                avatarUrl=""
+              />
+            ))}
           </div>
         )}
         <div className="flex items-center justify-center text-xs text-gray-500 gap-1 font-semibold">

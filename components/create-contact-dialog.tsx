@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { IntegrationAppError, useIntegrationApp } from "@integration-app/react";
-import { PhoneNumberInputWithDefCountry } from "@/components/PhoneNumberInputWithDefCountry";
+import { PhoneNumberInputWithDefCountry } from "@/components/phone-number-input-with-def-country";
 import { TagInput } from "@/components/ui/tag-input";
 import { useToast } from "@/hooks/use-toast";
 import { Plus } from "lucide-react";
