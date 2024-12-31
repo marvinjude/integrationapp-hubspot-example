@@ -12,17 +12,6 @@ import { HubspotIcon } from "@/icons/hubspot";
 import Link from "next/link";
 import { CreateContactDialog } from "@/components/create-contact-dialog";
 
-/**
- * SUGGESTIONS:
- * - We need to work on typing for ts users, we can have a cli that generates types for the user based on their output schema
- * - We need a tonne of usage examples
- * - We need to fix a server component issue for older react / nextjs versions
- * - We neeed a discord community to support customers
- * - We need to fix our documentation
- * - We need to pass back the id of the authenticated workspace to URI
- * - Unable to create output schema for the create-contact action as UI keeps jumping. We have to access the response
- */
-
 function Page() {
   const integrationApp = useIntegrationApp();
   const connections = useConnections();

@@ -1,4 +1,4 @@
-## Integration app + Hubspot Example
+## Nextjs + Integration app + Hubspot Example
 
 This example demonstrates how to use Integration.app with Hubspot. To test the integration, you need a Hubspot account. If you don't have one, you can create it [here](https://www.hubspot.com/).
 
@@ -45,3 +45,13 @@ _You can also import this template into your workspace: [Import template](https:
    npm run dev
    ```
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Suggested Improvements to integration.app
+
+- Enhance TypeScript support by developing a CLI tool that generates types based on the user's output schema.
+- Provide extensive usage examples to help users understand various use cases.
+- Establish a Discord community to offer support and foster engagement with customers.
+- Improve the existing documentation to make it more comprehensive and user-friendly.
+- Ensure the authenticated workspace ID is passed back to the URI as current Hubspot URI is missing the workspace ID.
+- Fix the UI issue that prevents creating an output schema from being created, as the interface is currently unstable.
+- Implement a feature to clone actions, which would be beneficial for testing and experimenting with different examples.
