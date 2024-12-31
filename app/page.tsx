@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { UserButton } from "@clerk/nextjs";
-import { useEffect } from "react";
-import { useConnections, useIntegrationApp } from "@integration-app/react";
+import {
+  Button,
+  useConnections,
+  useIntegrationApp,
+} from "@integration-app/react";
 
 import { Spinner } from "@/components/ui/spinner";
 import { UserCard } from "@/components/user-card";
@@ -15,13 +18,7 @@ import { CreateContactDialog } from "@/components/create-contact-dialog";
 function Page() {
   const integrationApp = useIntegrationApp();
   const connections = useConnections();
-  const { records, isLoading } = useHubspotRecords();
-
-  useEffect(() => {
-    if (connections.items.length === 0 && connections.loading === false) {
-      integrationApp.open({});
-    }
-  }, [integrationApp, connections.items.length, connections.loading]);
+  const { records, isLoading, mutate } = useHubspotRecords();
 
   return (
     <div className="flex flex-col items-center h-screen overflow-y-hidden pb-2">
@@ -38,6 +35,24 @@ function Page() {
             <CreateContactDialog records={records} />
           )}
         </div>
+
+        {connections.items.length === 0 && connections.loading === false && (
+          <div className="flex justify-center items-center h-full w-full">
+            <Button
+              onClick={() =>
+                integrationApp.open({
+                  onClose: () => {
+                    mutate();
+                  },
+                })
+              }
+              className="bg-orange-600 text-white px-4 py-2 rounded-md font-semibold"
+            >
+              <HubspotIcon useCurrentColor /> Connect Hubspot
+            </Button>
+          </div>
+        )}
+
         {isLoading ? (
           <div className="flex justify-center items-center h-full w-full">
             <Spinner />
@@ -46,9 +61,9 @@ function Page() {
           <div className="flex flex-col justify-center items-center h-full w-full">
             <HubspotIcon />
             <h1 className="text-2xl font-bold">No contacts yet</h1>
-            <h1 className="text-gray-500  py-2">
+            <p className="text-gray-500  py-2">
               Your contacts will appear here once you create them
-            </h1>
+            </p>
             <CreateContactDialog records={records} />
           </div>
         ) : (
