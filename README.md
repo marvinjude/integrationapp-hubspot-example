@@ -2,6 +2,8 @@
 
 This example demonstrates how to use Integration.app with Hubspot. To test the integration, you need a Hubspot account. If you don't have one, you can create it [here](https://www.hubspot.com/).
 
+<img width="1512" alt="Screenshot 2025-01-01 at 00 40 53" src="https://github.com/user-attachments/assets/4f679dbc-b582-4399-8734-66d74fa78042" />
+
 ### Prerequisites
 
 #### Clerk (Authentication)
