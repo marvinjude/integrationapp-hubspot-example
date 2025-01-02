@@ -59,4 +59,5 @@ cp .env.local.example .env.local
 
 ### Todo
 
-- Page integration.app pagination in the UI
+- Use integration.app pagination in the UI
+- Make UI responsive
